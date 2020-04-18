@@ -9,21 +9,36 @@
         <title>Another Webpage</title>
     </head>
     <body>
-      <p>Area of a square calculator</p>
-        <label for="L">Length:</label>
-  <input type="text" id="length" name="Length"><br><br>
-  <label for="W">Width:</label>
-  <input type="text" id="width" name="Width"><br><br>
+      <p>Calculate area of a trapezoid</p>
+  <label for="A">A base:</label>
+  <input type="text" id="ABase" name="ABase" ><br><br>
+  <label for="B">B base:</label>
+  <input type="text" id="BBase" name="BBase" > <br><br>
+  <label for="H">Height:</label>
+  <input type="text" id="HHeight" name="HHeight" ><br><br>
+  
+  <label for="Area">Area:</label>
+  <input type="text" id="Area" name="Area" value="" readonly><br><br>
+  
   <input type="button" value="Calculate" onclick="calculate()">
   <script>
       function calculate() {
-        let length;
-        let width;
+        let a;
+        let b;
+        let h;
         let area;
-        length = document.getElementById("length").value;
-        width = document.getElementById("width").value;
-        area = length * width;
-        alert(area);
+        a  = parseInt(document.getElementById("ABase").value);
+        b  = parseInt(document.getElementById("BBase").value);
+        h  = parseInt(document.getElementById("HHeight").value);
+        console.log(a , b, h );
+        area = ((a + b)/2)*h;
+        if (isNaN(area)) {
+          document.getElementById("Area").value = "";
+        }
+        else {
+          document.getElementById("Area").value = area;
+          //alert(area);
+        }
       }
   </script>
     </body>
