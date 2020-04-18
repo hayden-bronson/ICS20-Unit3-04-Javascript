@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <meta name="description" content="My first webpage, with image">
+      <meta name="keywords" content="mths, website">
+      <meta name="author" content="Hayden Bronson">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Another Webpage</title>
+    </head>
+    <body>
+      <p>Area of a square calculator</p>
+        <label for="L">Length:</label>
+  <input type="text" id="length" name="Length"><br><br>
+  <label for="W">Width:</label>
+  <input type="text" id="width" name="Width"><br><br>
+  <input type="button" value="Calculate" onclick="calculate()">
+  <script>
+      function calculate() {
+        let length;
+        let width;
+        let area;
+        length = document.getElementById("length").value;
+        width = document.getElementById("width").value;
+        area = length * width;
+        alert(area);
+      }
+  </script>
+    </body>
+</html>
